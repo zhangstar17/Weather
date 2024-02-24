@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Personalized Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #050c15;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #03060d;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            border-bottom: 1px solid #33658a;
+            padding-bottom: 5px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #03060d;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Your Personalized Webpage</h1>
+    </header>
+    <div class="container">
+        <section>
+            <h2>Weather Prediction</h2>
+            <p>Here you'll find the latest weather predictions:</p>
+            <ul>
+                <li>Weather forecast for your location</li>
+                <script>
+			fetch('https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWA-5045943E-C616-472D-8C84-85E46434B1E4&format=JSON&locationName=%E6%A1%83%E5%9C%92%E5%B8%82&sort=time')
+  			.then(response => response.json())
+ 			.then(data => {
+    			// Handle the data
+   			console.log(data);
+  			})
+  			.catch(error => {
+    			// Handle errors
+    			console.error('Error fetching data:', error);
+  			});
+
+            </ul>
+        </section>
+        <section>
+            <h2>News from Different Countries</h2>
+            <p>Stay updated with news from around the world:</p>
+            <ul>
+                <li>Latest news headlines</li>
+                <!-- Add dynamically fetched news articles here -->
+            </ul>
+        </section>
+        <section>
+            <h2>New Research Accomplishments</h2>
+            <p>Discover recent advancements in various fields of study:</p>
+            <ul>
+                <li>Recent breakthroughs and discoveries</li>
+                <!-- Add dynamically fetched research accomplishments here -->
+            </ul>
+        </section>
+        <section>
+            <h2>Economics Index</h2>
+            <p>Keep track of economic indicators:</p>
+            <ul>
+                <li>Stock market updates</li>
+                <li>Exchange rates</li>
+                <!-- Add dynamically fetched economics index data here -->
+            </ul>
+        </section>
+        <section>
+            <h2>Government Data</h2>
+            <p>Access reliable government statistics and information:</p>
+            <ul>
+                <li>Economic data</li>
+                <li>Demographic data</li>
+                <!-- Add dynamically fetched government data here -->
+            </ul>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 Your Name</p>
+    </footer>
+</body>
+
+</html>
